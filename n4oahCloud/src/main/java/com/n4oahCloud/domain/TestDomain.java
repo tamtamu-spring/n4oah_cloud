@@ -3,8 +3,7 @@ package com.n4oahCloud.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 @Entity
 public class TestDomain {
@@ -27,5 +26,10 @@ public class TestDomain {
 
 	public void setNn(String nn) {
 		this.nn = nn;
+	}
+
+	@Override
+	public String toString() {
+		return "TestDomain [no=" + no + ", nn=" + nn + "]";
 	}
 }
