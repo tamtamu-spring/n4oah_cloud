@@ -8,6 +8,14 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.Table;
 
+/**
+ * Account Entity
+ * 
+ * @author n4oah
+ * @category Domain Class
+ * @since 2018/02/03
+ */
+
 @Entity
 @javax.persistence.Table(name="account")
 @Table(comment="회원관리", appliesTo = "account")
@@ -22,11 +30,11 @@ public class Account {
 	private String email;
 	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER | KAKAO'", nullable=false)
 	private String loginApi;
-	@Column(columnDefinition="VARCHAR(128) COMMENT ''", nullable=false)
+	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 아이디'", nullable=false)
 	private String loginApiId;
-	@Column(columnDefinition="VARCHAR(128) COMMENT ''", nullable=false)
+	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 토큰'", nullable=false)
 	private String loginApiAccessToken;
-
+	
 	public Integer getId() {
 		return id;
 	}
