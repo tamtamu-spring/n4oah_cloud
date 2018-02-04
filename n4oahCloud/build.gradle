@@ -33,8 +33,9 @@ dependencies {
 	
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.10.RELEASE' // JPA
     compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.1' // MariaDB
-    
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.10.RELEASE' // 자동 refresh
+    //compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20' // @Data
+    compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE' // 구글 로그인 API에 사용했음
     
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

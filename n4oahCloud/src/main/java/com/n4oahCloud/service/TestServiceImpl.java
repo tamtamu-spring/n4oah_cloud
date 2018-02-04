@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.n4oahCloud.domain.TestDomain;
+import com.n4oahCloud.domain.Account;
 import com.n4oahCloud.repository.TestRepository;
 
 @Service
@@ -14,7 +14,7 @@ public class TestServiceImpl implements TestService {
 	TestRepository testRepository;
 	
 	@Override
-	public List<TestDomain> getList() {
+	public List<Account> getList() {
 		return testRepository.findAll();
 	}
 }
