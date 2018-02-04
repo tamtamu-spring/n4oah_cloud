@@ -1,4 +1,4 @@
-package com.n4oahCloud.domain;
+package com.n4oahCloud.account.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
