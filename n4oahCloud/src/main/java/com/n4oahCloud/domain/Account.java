@@ -1,4 +1,4 @@
-package com.n4oahCloud.account.domain;
+package com.n4oahCloud.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,11 +9,14 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Table;
 
 /**
- * Account Entity
- * 
- * @author n4oah
- * @category Domain Class
- * @since 2018/02/03
+ * <pre>
+ * com.n4oahCloud.domain
+ * Account.java
+ * </pre>
+ *
+ * @Author 		: n4oah
+ * @Date 		: 2018. 2. 5.
+ * @Virsion		:
  */
 
 @Entity
