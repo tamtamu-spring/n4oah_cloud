@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/head :: headerFragment">
-		<title>로그인 폼</title>
+	<head th:include="fragments/head :: headerFragment">
+		<title id="page-title">제목</title>
 	</head>
 	<body>
-		<h2>
-			Hello!
-			<span th:text="${name}">${name}</span>
-		</h2>
-		<div>Thymeleaf version</div>
+		
 	</body>
 </html>
