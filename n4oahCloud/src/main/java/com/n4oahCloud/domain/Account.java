@@ -27,15 +27,17 @@ public class Account {
 	@Column(columnDefinition="INT(10) UNSIGNED COMMENT '회원 고유 번호'", nullable=false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Column(columnDefinition="VARCHAR(128) COMMENT '회원 비밀번호'", nullable=false)
+	private String pwd;
 	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 이름'", nullable=false)
 	private String name;
 	@Column(columnDefinition="VARCHAR(150) COMMENT '회원 이메일'", nullable=false)
 	private String email;
-	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER | KAKAO'", nullable=false)
+	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER | KAKAO'", nullable=true)
 	private String loginApi;
-	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 아이디'", nullable=false)
+	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 아이디'", nullable=true)
 	private String loginApiId;
-	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 토큰'", nullable=false)
+	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 토큰'", nullable=true)
 	private String loginApiAccessToken;
 	
 	public Integer getId() {
@@ -68,5 +70,29 @@ public class Account {
 
 	public void setLoginApi(String loginApi) {
 		this.loginApi = loginApi;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+	public String getLoginApiId() {
+		return loginApiId;
+	}
+
+	public void setLoginApiId(String loginApiId) {
+		this.loginApiId = loginApiId;
+	}
+
+	public String getLoginApiAccessToken() {
+		return loginApiAccessToken;
+	}
+
+	public void setLoginApiAccessToken(String loginApiAccessToken) {
+		this.loginApiAccessToken = loginApiAccessToken;
 	}
 }

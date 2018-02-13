@@ -23,6 +23,17 @@
 						</li>
 					</ul>
 				</div>
+				<ul class="navbar-nav float-md-right">
+					<li class="nav navbar-nav float-md-right pr-3">
+						<div th:if="${session.user == null}">
+							<button class="btn btn-secondary mr-1 signin-btn">로그인</button>
+							<button class="btn btn-secondary signup-btn">회원가입</button>
+						</div>
+						<div th:unless="${session.user == null}">
+							<button class="btn btn-secondary signout-btn">로그아웃</button>
+						</div>
+					</li>
+				</ul>
 			</nav>
 		</header>
 	</body>
