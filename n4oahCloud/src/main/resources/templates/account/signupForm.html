@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title>로그인 폼</title>
+		<title>회원가입 폼</title>
 		<object th:include="fragments/head :: headFragment" th:remove="tag"></object>
 		<!-- page resources -->
-		<script th:src="@{/js/account/loginForm.js}"></script>
-		<link th:href="@{/css/account/loginForm.css}" rel="stylesheet" />
 	</head>
 	<body>
 		<header th:replace="fragments/hedaer :: headerFragment"></header>
 		<div id="wrap" class="container py-5">
-		    <div class="row">
+			<div class="row">
 		        <div class="col-md-12">
-	                <div class="col-md-6 mx-auto">
+		        	<div class="col-md-6 mx-auto">
 	                    <span class="anchor" id="formLogin"></span>
 	                    <div class="card rounded-0">
 	                        <div class="card-header">
-	                            <h3 class="mb-0">Login</h3>
+	                            <h3 class="mb-0">회원가입</h3>
 	                        </div>
 	                        <div class="card-body">
 	                            <form class="form" role="form" autocomplete="off" id="formLogin">
@@ -26,7 +24,11 @@
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="password">비밀번호</label>
-	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="required" autocomplete="new-password" />
+	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" autocomplete="new-password" />
+	                                </div>
+	                                <div class="form-group">
+	                                    <label for="password">비밀번호 확인</label>
+	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" autocomplete="new-password" />
 	                                </div>
 	                                <div>
 	                                	
@@ -37,7 +39,7 @@
 	                    </div>
 	                </div>
 		        </div>
-		    </div>
+	        </div>
 		</div>
 		<footer th:replace="fragments/footer :: footerFragment"></footer>
 	</body>

@@ -17,9 +17,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/account")
 public class AccountController {
-	
-	@RequestMapping("/loginForm.do")
-	public void loginForm() {
+	@RequestMapping("/signinForm.do")
+	public void signinForm() {
 		
+	}
+	
+	@RequestMapping("/signupForm.do")
+	public void signupForm() {
+		
+	}
+	
+	@RequestMapping("/signout.do")
+	public String signout() {
+		
+		return "";
 	}
 }
