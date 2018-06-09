@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.n4oahCloud.service.TestService;
+import com.n4oahCloud.service.AccountService;
 
 /**
  * <pre>
@@ -13,14 +13,13 @@ import com.n4oahCloud.service.TestService;
  * </pre>
  *
  * @Author 		: n4oah
- * @Date 		: 2018. 2. 5.
- * @Virsion		:
+ * @Date 		: 2018. 5. 3.
  */
 
 @Controller
 public class MainController {
 	@Autowired
-	TestService testService;
+	AccountService testService;
 	
 	@RequestMapping("/main.do")
 	public String main() {

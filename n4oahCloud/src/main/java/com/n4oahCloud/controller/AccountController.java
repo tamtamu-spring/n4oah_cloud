@@ -1,7 +1,11 @@
 package com.n4oahCloud.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.n4oahCloud.domain.Account;
+import com.n4oahCloud.service.AccountService;
 
 /**
  * <pre>
@@ -11,24 +15,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @Author 		: n4oah
  * @Date 		: 2018. 2. 5.
- * @Virsion		:
  */
 
 @Controller
 @RequestMapping("/account")
 public class AccountController {
+	@Autowired
+	private AccountService accountService;
+	
 	@RequestMapping("/signinForm.do")
-	public void signinForm() {
+	public void signinForm() throws Exception {
 		
 	}
 	
 	@RequestMapping("/signupForm.do")
-	public void signupForm() {
-		
+	public void signupForm(Account account) throws Exception  {
+		accountService.accountSignup(account);
 	}
 	
 	@RequestMapping("/signout.do")
-	public String signout() {
+	public String signout() throws Exception {
 		
 		return "";
 	}

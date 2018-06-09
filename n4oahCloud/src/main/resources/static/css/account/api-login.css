@@ -1,0 +1,9 @@
+.naver_signin {
+	content:url(../../image/account/naver-login-btn.PNG);
+	width: 120px;
+	height: auto;
+}
+
+.naver_signin:hover {
+	cursor: pointer;
+}

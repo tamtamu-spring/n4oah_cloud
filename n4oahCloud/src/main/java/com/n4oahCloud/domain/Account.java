@@ -16,7 +16,13 @@ import org.hibernate.annotations.Table;
  *
  * @Author 		: n4oah
  * @Date 		: 2018. 2. 5.
- * @Virsion		:
+ */
+
+/*
+ * @Entity : 테이블과 맵핑될 클래스임을 나타내는 어노테이션
+ * @Id : Primary Key임을 나타내는 어노테이션
+ * @GeneratedValue : 기본 값은 auto_increment
+ * @Column : 테이블 컬럼임을 나타내는 어노테이션
  */
 
 @Entity
@@ -26,25 +32,35 @@ public class Account {
 	@Id
 	@Column(columnDefinition="INT(10) UNSIGNED COMMENT '회원 고유 번호'", nullable=false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer no;
+	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 아이디'", nullable=false)
+	private String id;
 	@Column(columnDefinition="VARCHAR(128) COMMENT '회원 비밀번호'", nullable=false)
 	private String pwd;
 	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 이름'", nullable=false)
 	private String name;
 	@Column(columnDefinition="VARCHAR(150) COMMENT '회원 이메일'", nullable=false)
 	private String email;
-	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER | KAKAO'", nullable=true)
+	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER'", nullable=true)
 	private String loginApi;
 	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 아이디'", nullable=true)
 	private String loginApiId;
 	@Column(columnDefinition="VARCHAR(128) COMMENT '로그인 API 토큰'", nullable=true)
 	private String loginApiAccessToken;
 	
-	public Integer getId() {
+	public Integer getNo() {
+		return no;
+	}
+
+	public void setNo(Integer no) {
+		this.no = no;
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -94,5 +110,11 @@ public class Account {
 
 	public void setLoginApiAccessToken(String loginApiAccessToken) {
 		this.loginApiAccessToken = loginApiAccessToken;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", loginApi=" + loginApi
+				+ ", loginApiId=" + loginApiId + ", loginApiAccessToken=" + loginApiAccessToken + "]";
 	}
 }

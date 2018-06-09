@@ -12,9 +12,8 @@ import com.n4oahCloud.domain.Account;
  *
  * @Author 		: n4oah
  * @Date 		: 2018. 2. 5.
- * @Virsion		:
  */
 
-public interface TestService {
-	public List<Account> getList();
+public interface AccountService {
+	public void accountSignup(Account account) throws Exception;
 }

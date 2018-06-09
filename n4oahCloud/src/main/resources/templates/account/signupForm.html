@@ -4,6 +4,11 @@
 		<title>회원가입 폼</title>
 		<object th:include="fragments/head :: headFragment" th:remove="tag"></object>
 		<!-- page resources -->
+		<script th:src="@{/js/account/signupForm.js}"></script>
+		<link th:href="@{/css/account/signupForm.css}" rel="stylesheet" />
+		
+		<script th:src="@{/js/account/api-login.js}"></script>
+		<link th:href="@{/css/account/api-login.css}" rel="stylesheet"/>
 	</head>
 	<body>
 		<header th:replace="fragments/hedaer :: headerFragment"></header>
@@ -17,23 +22,29 @@
 	                            <h3 class="mb-0">회원가입</h3>
 	                        </div>
 	                        <div class="card-body">
-	                            <form class="form" role="form" autocomplete="off" id="formLogin">
+	                            <form class="form" role="form" id="signup-form" th:action="@{/account/signupForm.do}" method="post">
 	                                <div class="form-group">
-	                                    <label for="uname1">아이디</label>
-	                                    <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="required" />
-	                                </div>
-	                                <div class="form-group">
-	                                    <label for="password">비밀번호</label>
-	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" autocomplete="new-password" />
+	                                    <label for="id">아이디</label>
+	                                    <input type="text" class="form-control form-control-lg rounded-0" name="id" id="id" pattern="[a-z0-9]{4,12}" title="아이디는 4~12자로 설정해야 됩니다." required="required" />
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="password">비밀번호 확인</label>
-	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" autocomplete="new-password" />
+	                                    <label for="id">이름</label>
+	                                    <input type="text" class="form-control form-control-lg rounded-0" name="name" id="name" pattern="[ㄱ-ㅎ가-힣a-z0-9]{2,10}" title="이름은 2~10자로 설정해야 됩니다." required="required" />
 	                                </div>
-	                                <div>
-	                                	
+	                                <div class="form-group">
+	                                    <label for="pwd1">비밀번호</label>
+	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" name="pwd" pattern="[A-Za-z0-9]{6,12}" title="비밀번호는 6~12자로 설정해야 됩니다." autocomplete="new-password" />
 	                                </div>
-	                                <button type="button" class="btn btn-success btn-lg float-right">로그인</button>
+	                                <div class="form-group">
+	                                    <label for="pwd2">비밀번호 확인</label>
+	                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd2" pattern="[A-Za-z0-9]{6,12}" title="비밀번호는 6~12자로 설정해야 됩니다." autocomplete="new-password" />
+	                                </div>
+	                                <div class="form-group">
+										<label for="email1">이메일 주소</label>
+										<input type="text" id="email" pattern="[a-z0-9]{4,12}" name="email" title="이메일 형식이 맞지 않습니다." class="form-control form-control-lg rounded-0" />
+									</div>
+									<img class="naver_signin" />
+	                                <button class="btn btn-success btn-lg float-right signup_btn">회원가입</button>
 	                            </form>
 	                        </div>
 	                    </div>
