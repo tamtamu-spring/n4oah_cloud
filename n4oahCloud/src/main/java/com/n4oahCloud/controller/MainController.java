@@ -22,9 +22,5 @@ public class MainController {
 	AccountService testService;
 	
 	@RequestMapping("/main.do")
-	public String main() {
-		System.out.println(testService.getList());
-		System.out.println("main 실행");
-		return "main";
-	}
+	public void main() {}
 }

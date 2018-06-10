@@ -39,5 +39,7 @@ dependencies {
     //compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20' // @Data
     compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE' // 구글 로그인 API에 사용했음
     
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop' // aop
+    
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

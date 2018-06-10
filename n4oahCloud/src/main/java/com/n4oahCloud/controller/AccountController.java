@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.n4oahCloud.domain.Account;
+import com.n4oahCloud.logging.LoggingIntercepter;
 import com.n4oahCloud.service.AccountService;
 
 /**
@@ -25,7 +26,7 @@ public class AccountController {
 	
 	@RequestMapping("/signinForm.do")
 	public void signinForm() throws Exception {
-		
+		LoggingIntercepter ll = new LoggingIntercepter();
 	}
 	
 	@RequestMapping("/signupForm.do")
