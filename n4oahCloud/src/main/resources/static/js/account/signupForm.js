@@ -8,10 +8,12 @@ $(function() {
 			url: '/account/idOverlapChk.do',
 			data: {'id': id},
 			method: 'get',
+			async: false,
 			success: function(overlap) {
 				if (overlap == true) {
 					alertify.alert("중복된 아이디 입니다.");
 					event.preventDefault();
+					console.log('aa');
 					return false;
 				}
 			}
@@ -21,6 +23,5 @@ $(function() {
 			alert('비밀번호가 서로 일치하지 않습니다.');
 			event.preventDefault();
 		}
-		return false;
 	});
 });
