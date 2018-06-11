@@ -3,10 +3,10 @@ package com.n4oahCloud.logging;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.servlet.HandlerInterceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
-
-import groovy.util.logging.Slf4j;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
  * 
@@ -19,8 +19,9 @@ import groovy.util.logging.Slf4j;
  * @Date 		: 2018. 6. 10.
  * @Virsion		:
  */
-@Slf4j
-public class LoggingIntercepter implements HandlerInterceptor {
+public class LoggingIntercepter extends HandlerInterceptorAdapter {
+	private static final Logger logger = LoggerFactory.getLogger(LoggingIntercepter.class);
+	
 	/**
 	 * 
 	 * <pre>
@@ -33,13 +34,16 @@ public class LoggingIntercepter implements HandlerInterceptor {
 	 *
 	 * @Author		: n4oah
 	 * @Date		: 2018. 6. 10.
+	 * 
+	 * 컨트롤러 실행 전 호출
+	 * return 값 true : 
+	 * return 값 false : 
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		
-		
-		return false;
+		logger.info("preHandle : " + request.getRequestURL());
+		return true;
 	}
 	
 	/**
@@ -54,15 +58,14 @@ public class LoggingIntercepter implements HandlerInterceptor {
 	 *
 	 * @Author		: n4oah
 	 * @Date		: 2018. 6. 10.
+	 * 
+	 * 컨트롤러 실행 후 호출 (view 페이지 로딩 전)
 	 */
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		
-		
-		
+		logger.info("postHandle : " + request.getRequestURL());
 	}
-
 	/**
 	 * 
 	 * <pre>
@@ -75,12 +78,14 @@ public class LoggingIntercepter implements HandlerInterceptor {
 	 *
 	 * @Author		: n4oah
 	 * @Date		: 2018. 6. 10.
+	 * 
+	 * view 페이지 모두 출력 후 호출
 	 */
+	/*
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		
-		
-		
+		logger.info("intercepter -> afterCompletion");
 	}
+	*/
 }

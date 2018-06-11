@@ -22,7 +22,7 @@
 	                            <h3 class="mb-0">회원가입</h3>
 	                        </div>
 	                        <div class="card-body">
-	                            <form class="form" role="form" id="signup-form" th:action="@{/account/signupForm.do}" method="post">
+	                            <form class="form" role="form" id="signup-form" th:action="@{/account/signup.do}" method="post">
 	                                <div class="form-group">
 	                                    <label for="id">아이디</label>
 	                                    <input type="text" class="form-control form-control-lg rounded-0" name="id" id="id" pattern="[a-z0-9]{4,12}" title="아이디는 4~12자로 설정해야 됩니다." required="required" />
@@ -53,5 +53,6 @@
 	        </div>
 		</div>
 		<footer th:replace="fragments/footer :: footerFragment"></footer>
+		<object th:include="fragments/script :: scriptFragment" th:remove="tag"></object>
 	</body>
 </html>

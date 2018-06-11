@@ -25,4 +25,9 @@ public class AccountServiceImpl implements AccountService {
 	public void accountSignup(Account account) throws Exception {
 		accountRepository.save(account);
 	}
+
+	@Override
+	public boolean idoverlapCheck(Account account) throws Exception {
+		return accountRepository.findById(account.getId()) == null ? false : true;
+	}
 }

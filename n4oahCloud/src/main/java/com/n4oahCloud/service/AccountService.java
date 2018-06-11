@@ -1,7 +1,5 @@
 package com.n4oahCloud.service;
 
-import java.util.List;
-
 import com.n4oahCloud.domain.Account;
 
 /**
@@ -16,4 +14,5 @@ import com.n4oahCloud.domain.Account;
 
 public interface AccountService {
 	public void accountSignup(Account account) throws Exception;
+	public boolean idoverlapCheck(Account account) throws Exception;
 }
