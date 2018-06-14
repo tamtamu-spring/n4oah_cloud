@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Table;
-
 /**
  * <pre>
  * com.n4oahCloud.domain
@@ -26,20 +24,20 @@ import org.hibernate.annotations.Table;
  */
 
 @Entity
-@javax.persistence.Table(name="account")
-@Table(comment="회원관리", appliesTo = "account")
+//@Table(name="account")
+@org.hibernate.annotations.Table(comment="회원관리", appliesTo = "account")
 public class Account {
 	@Id
 	@Column(columnDefinition="INT(10) UNSIGNED COMMENT '회원 고유 번호'", nullable=false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer no;
-	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 아이디'", nullable=false)
+	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 아이디'", nullable=false, unique=true)
 	private String id;
 	@Column(columnDefinition="VARCHAR(128) COMMENT '회원 비밀번호'", nullable=false)
 	private String pwd;
 	@Column(columnDefinition="VARCHAR(50) COMMENT '회원 이름'", nullable=false)
 	private String name;
-	@Column(columnDefinition="VARCHAR(150) COMMENT '회원 이메일'", nullable=false)
+	@Column(columnDefinition="VARCHAR(150) COMMENT '회원 이메일'", nullable=false, unique=true)
 	private String email;
 	@Column(columnDefinition="VARCHAR(50) COMMENT 'GOOGLE | NAVER'", nullable=true)
 	private String loginApi;

@@ -27,7 +27,16 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public boolean idoverlapCheck(Account account) throws Exception {
-		return accountRepository.findById(account.getId()) == null ? false : true;
+	public int overlapCheck(Account account) throws Exception {
+		int res = 0;
+		
+		if (accountRepository.findById(account.getId()) != null) {
+			res = 1;
+		}
+		else if (accountRepository.fidByEmail(account.getEmail()) != null) {
+			res = 2;
+		}
+		
+		return res;
 	}
 }

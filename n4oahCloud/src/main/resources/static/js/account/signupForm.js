@@ -2,19 +2,21 @@
 
 $(function() {
 	$('#signup-form').submit(function(event) {
-		let id = $('#id').val();
+		let id = $('#id').val(),
+			email = $('#email').val();
 		
 		$.ajax({
-			url: '/account/idOverlapChk.do',
-			data: {'id': id},
+			url: '/account/overlapChk',
+			data: {'id': id, 'email': email},
 			method: 'get',
 			async: false,
 			success: function(overlap) {
-				if (overlap == true) {
+				if (overlap == 1) {
 					alertify.alert("중복된 아이디 입니다.");
 					event.preventDefault();
-					console.log('aa');
-					return false;
+				} else if (overlap == 2) {
+					alertify.alert("중복된 이메일 입니다.");
+					event.preventDefault();
 				}
 			}
 		});

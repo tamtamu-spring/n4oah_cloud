@@ -15,6 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-	@RequestMapping("/main.do")
+	@RequestMapping("/main")
 	public void main() {}
 }

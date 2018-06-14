@@ -22,6 +22,9 @@ import com.n4oahCloud.domain.Account;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
-	@Query(value="select a.id from Account a where a.id=?1")
+	@Query(value="select a.id from #{#entityName} a where a.id=?1")
 	public String findById(String id);
+	
+	@Query(value="select a.id from #{#entityName} a where a.email=?1")
+	public String fidByEmail(String email);
 }
