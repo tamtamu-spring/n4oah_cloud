@@ -39,4 +39,9 @@ public class AccountServiceImpl implements AccountService {
 		
 		return res;
 	}
+
+	@Override
+	public Account signin(Account account) throws Exception {
+		return accountRepository.findByIdAndPassword(account.getId(), account.getPwd());
+	}
 }

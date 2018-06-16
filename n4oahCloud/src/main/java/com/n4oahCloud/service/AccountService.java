@@ -15,4 +15,5 @@ import com.n4oahCloud.domain.Account;
 public interface AccountService {
 	public void accountSignup(Account account) throws Exception;
 	public int overlapCheck(Account account) throws Exception;
+	public Account signin(Account account) throws Exception;
 }

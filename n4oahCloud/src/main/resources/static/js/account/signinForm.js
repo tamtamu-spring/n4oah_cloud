@@ -12,8 +12,8 @@ $(function() {
 		event.preventDefault();
 	});
 	
-	#('#login-form').submit(function(event) {
+	$('#login-form').submit(function(event) {
 		
-		event.preventDefault();
+		//event.preventDefault();
 	});
 });

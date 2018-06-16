@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>로그인 폼</title>
+		<object th:include="fragments/head :: headFragment" th:remove="tag"></object>
+		<!-- page resources -->
+		<link th:href="@{/css/account/signupSuccess.css}" rel="stylesheet" />
+	</head>
+	<body>
+		<header th:replace="fragments/hedaer :: headerFragment"></header>
+		<div id="wrap" class="container py-5">
+		    <div class="row">
+		        <div class="col-md-12">
+	                <div class="col-md-6 mx-auto">
+	                	<div class="alert-message alert-message-success">
+			                <h4>
+			                    회원가입 성공</h4>
+			                <p>
+			                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+			                    Ipsum has been the industry's standard dummy text ever since the 1500s.<strong> strong
+			                        message</strong>. <a href="http://www.jquery2dotnet.com/2013/07/cool-notification-css-style.html">
+			                            Cool Notification Css Style</a></p>
+			            </div>
+	                </div>
+		        </div>
+		    </div>
+		</div>
+		<footer th:replace="fragments/footer :: footerFragment"></footer>
+		<object th:include="fragments/script :: scriptFragment" th:remove="tag"></object>
+	</body>
+</html>

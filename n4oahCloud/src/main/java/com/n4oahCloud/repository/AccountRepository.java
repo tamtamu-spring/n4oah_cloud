@@ -2,6 +2,7 @@ package com.n4oahCloud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.n4oahCloud.domain.Account;
@@ -22,9 +23,12 @@ import com.n4oahCloud.domain.Account;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
-	@Query(value="select a.id from #{#entityName} a where a.id=?1")
+	@Query(value="SELECT a.id FROM #{#entityName} a WHERE a.id=:id")
 	public String findById(String id);
 	
-	@Query(value="select a.id from #{#entityName} a where a.email=?1")
+	@Query(value="SELECT a.email FROM #{#entityName} a WHERE a.email=:email")
 	public String fidByEmail(String email);
+	
+	@Query(value="SELECT a FROM #{#entityName} a WHERE a.id=:id AND a.pwd=:pwd")
+	public Account findByIdAndPassword(@Param("id") String id, @Param("pwd") String pwd);
 }
